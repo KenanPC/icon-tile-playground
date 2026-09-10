@@ -205,7 +205,7 @@ h2 {
   position: absolute;
   z-index: 10;
   top: calc(100% + 0.55rem);
-  right: 0;
+  left: 0;
   display: grid;
   width: min(360px, calc(100vw - 32px));
   grid-template-columns: 1fr 1fr;

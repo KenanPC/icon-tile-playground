@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Search Bootstrap Icons and compose exportable tiled SVG backgrounds for product and portfolio visuals."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kenancourtney.com/icon-tile-playground/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kenancourtney.com/icon-tile-playground/" />
+    <meta property="og:title" content="Icon Tile Playground | Kenan Courtney" />
+    <meta
+      property="og:description"
+      content="A tiny workshop for turning Bootstrap Icons into tiled SVG backgrounds."
+    />
+    <meta name="theme-color" content="#f6f8fa" />
+    <title>Icon Tile Playground | Kenan Courtney</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css?v=20260909a" />
+  </head>
+  <body>
+    <header class="workshop-header">
+      <a class="workshop-brand" href="../" aria-label="Home">
+        <img
+          class="brand-avatar"
+          src="https://avatars.githubusercontent.com/u/11634772?v=4"
+          width="36"
+          height="36"
+          alt=""
+          aria-hidden="true"
+        />
+        <span>Icon Tile Playground</span>
+      </a>
+    </header>
+
+    <main class="workshop-shell">
+      <section class="preview-area" aria-label="Generated tiled background preview">
+        <div class="preview-toolbar">
+          <div class="toolbar-controls">
+            <label class="pattern-select-field" for="pattern-select">
+              <span>Pattern</span>
+              <select id="pattern-select" aria-label="Pattern layout">
+                <option value="scattered">Scatter</option>
+                <option value="brick">Brick</option>
+                <option value="diamond">Diamond</option>
+                <option value="waves">Waves</option>
+              </select>
+            </label>
+            <div class="color-menu">
+              <span class="toolbar-label">Color</span>
+              <button
+                class="color-menu-button"
+                type="button"
+                id="color-menu-button"
+                aria-label="Colors"
+                aria-expanded="false"
+                aria-controls="color-popover"
+              >
+                <span class="color-split" id="color-split" aria-hidden="true"></span>
+              </button>
+              <div class="color-popover" id="color-popover" hidden>
+                <label class="color-control">
+                  <span>Background</span>
+                  <input id="background-color" type="color" value="#f6f8fa" />
+                </label>
+                <label class="color-control">
+                  <span>Icon</span>
+                  <input id="shape-color" type="color" value="#0f766e" />
+                </label>
+                <div class="swatch-row" id="palette-row" aria-label="Color presets"></div>
+              </div>
+            </div>
+          </div>
+          <div class="toolbar-actions">
+            <button class="tool-button" type="button" id="download-svg" title="Download SVG" aria-label="Download SVG">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+              </svg>
+            </button>
+            <button class="tool-button" type="button" id="download-png" title="Download PNG" aria-label="Download PNG">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v14H4zM8 13l2.5-2.5L14 14l2-2 4 4M8.5 8.5h.01" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="pattern-preview" id="pattern-preview" aria-label="Generated tiled background preview"></div>
+      </section>
+
+      <aside class="controls-panel" aria-label="Tile controls">
+        <div class="control-section icon-section">
+          <div class="section-heading">
+            <h2>Icons</h2>
+            <div class="heading-actions">
+              <span id="icon-count">Loading</span>
+              <button class="quiet-button" type="button" id="clear-button">Clear all</button>
+            </div>
+          </div>
+          <div class="selected-row">
+            <div class="selected-strip" id="selected-strip" aria-label="Selected icons"></div>
+            <label class="upload-icon-button" for="svg-upload" title="Upload SVG" aria-label="Upload SVG">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11m0-11 4 4m-4-4-4 4M5 20h14" />
+              </svg>
+              <input id="svg-upload" type="file" accept=".svg,image/svg+xml" multiple />
+            </label>
+          </div>
+          <label class="search-field" for="icon-search">
+            <span>Search Bootstrap Icons</span>
+            <input id="icon-search" type="search" placeholder="heart, capsule, arrow, phone..." autocomplete="off" />
+          </label>
+          <div class="shape-grid" id="shape-grid" aria-label="Icon choices"></div>
+          <div class="icon-pager" aria-label="Icon results pages">
+            <button class="pager-button" type="button" id="prev-icons" title="Previous icons" aria-label="Previous icons">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <span id="icon-page-status">Page 1</span>
+            <button class="pager-button" type="button" id="next-icons" title="Next icons" aria-label="Next icons">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 6 6 6-6 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="control-section range-section">
+          <h2>Tile Feel</h2>
+          <label>
+            <span>Size</span>
+            <input id="size-range" type="range" min="16" max="92" value="42" />
+          </label>
+          <label>
+            <span>Spacing</span>
+            <input id="spacing-range" type="range" min="52" max="178" value="104" />
+          </label>
+          <label>
+            <span>Opacity</span>
+            <input id="opacity-range" type="range" min="12" max="100" value="46" />
+          </label>
+          <label>
+            <span>Jitter</span>
+            <input id="jitter-range" type="range" min="0" max="48" value="18" />
+          </label>
+          <label>
+            <span>Rotation</span>
+            <input id="rotation-range" type="range" min="0" max="45" value="10" />
+          </label>
+          <label class="toggle-control">
+            <input id="random-rotation" type="checkbox" checked />
+            <span>Random rotation</span>
+          </label>
+          <label class="toggle-control">
+            <input id="flip-horizontal" type="checkbox" />
+            <span>Random horizontal flip</span>
+          </label>
+          <label class="toggle-control">
+            <input id="flip-vertical" type="checkbox" />
+            <span>Random vertical flip</span>
+          </label>
+        </div>
+      </aside>
+    </main>
+
+    <script src="assets/bootstrap-icons-1.13.1.js?v=20260909a"></script>
+    <script src="script.js?v=20260909b"></script>
+  </body>
+</html>

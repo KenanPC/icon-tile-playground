@@ -1,14 +1,30 @@
 # Icon Tile Playground
 
-A static workshop for building tiled SVG backgrounds from Bootstrap Icons and uploaded SVGs.
+Icon Tile Playground is a lightweight, static web tool for creating repeating icon-tile backgrounds.
 
-## Use
+Live tool: https://kenancourtney.com/icon-tile-playground/
 
-Open `index.html` in a browser. Search icons, select a set, adjust pattern, colors, size, spacing, opacity, jitter, and transforms, then export SVG or PNG.
+It lets you search and select from 2,000+ Bootstrap Icons, upload custom SVG icons for a session, customize pattern layout, spacing, color, opacity, jitter, rotation, and flips, then export the result as SVG or PNG.
 
-The KC mark links back to [kenancourtney.com](https://kenancourtney.com/).
+## Why I Built It
+
+I wanted a fast way to make subtle, reusable visual backgrounds for portfolio pages, profile banners, and product storytelling without designing each pattern from scratch.
+
+## Features
+
+- Search and select icons from Bootstrap Icons
+- Upload custom SVG icons for a session
+- Generate repeating patterns from selected icons
+- Adjust layout, size, spacing, opacity, jitter, rotation, and flips
+- Customize background and icon colors
+- Export SVG or PNG
+
+## Local Use
+
+Open `index.html` in a browser. No build step is required.
 
 ## Third-party assets
 
-This project vendors Bootstrap Icons so the playground can run as a static page. See `THIRD_PARTY_NOTICES.md` for license details.
+This project vendors Bootstrap Icons so the playground can run as a static page.
 
+See `THIRD_PARTY_NOTICES.md` for license details.

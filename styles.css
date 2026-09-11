@@ -155,11 +155,12 @@ h2 {
 .toolbar-actions {
   position: relative;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   gap: 0.45rem;
 }
 
 .toolbar-controls {
+  align-items: flex-start;
   gap: 0.9rem;
 }
 
@@ -181,6 +182,7 @@ h2 {
   display: inline-grid;
   width: 68px;
   height: 42px;
+  box-sizing: border-box;
   place-items: center;
   border: 1px solid rgba(96, 112, 124, 0.24);
   border-radius: 12px;
@@ -235,11 +237,17 @@ h2 {
 }
 
 .pattern-select-field select {
+  appearance: none;
+  -webkit-appearance: none;
   width: 108px;
-  min-height: 42px;
+  height: 42px;
+  box-sizing: border-box;
   border: 1px solid rgba(96, 112, 124, 0.24);
   border-radius: 12px;
-  background: linear-gradient(180deg, #ffffff, #edf2f7);
+  background:
+    linear-gradient(45deg, transparent 50%, var(--accent-strong) 50%) calc(100% - 18px) 50% / 6px 6px no-repeat,
+    linear-gradient(135deg, var(--accent-strong) 50%, transparent 50%) calc(100% - 13px) 50% / 6px 6px no-repeat,
+    linear-gradient(180deg, #ffffff, #edf2f7);
   color: var(--accent-strong);
   padding: 0 1.45rem 0 0.65rem;
   font-weight: 850;
